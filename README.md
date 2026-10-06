@@ -1,3 +1,23 @@
+<p align="center">
+  <img src=".github/readme/banner.png" alt="FaceSafety" width="100%">
+</p>
+
+<p align="center">
+  <img alt="👤 Projeto pessoal" src="https://img.shields.io/badge/%F0%9F%91%A4_Projeto_pessoal-6E40C9?style=for-the-badge">
+  <img alt="Python" src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white">
+  <img alt="OpenCV" src="https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white">
+</p>
+
+<p align="center">Face Safety: cadastro de rostos e reconhecimento facial pela câmera, para segurança ou controle de acesso, em Python (Windows e Linux).</p>
+
+### 📸 Telas do sistema
+
+<p align="center">
+  <img src=".github/readme/telas.png" alt="Telas de FaceSafety" width="100%">
+</p>
+
+---
+
 [[English version]](https://github.com/Davicjc/Face-Safety/blob/main/English%20version.md)
 
 # 📷Face-Safety
@@ -65,3 +85,7 @@
 <img src="https://github.com/Davicjc/Face-Safety/blob/main/Fotos/4.5-ADMs.jpg?raw=true" width="450">
 
 - [Imagem da parte referente do código que pode ser modificada](https://github.com/Davicjc/Face-Safety/blob/main/Fotos/Key%20Img.jpg?raw=true)
+
+---
+
+<p align="center">Feito por <a href="https://github.com/Davicjc">Davi Castro</a> · <a href="https://davicjc.com">davicjc.com</a></p>
