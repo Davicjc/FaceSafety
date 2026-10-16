@@ -1,58 +1,106 @@
-# 📷Face-Safety
-### Windows & Linux 'beta': 
-- This is a Python program that uses the "face recognition" facial recognition library. It allows you to add photos to be detected by the camera, delete people's records, and activate the scanner mode, which displays the person's name when they step in front of the camera. The program can be used for security purposes or access control if properly adapted.
+<p align="center">
+  <img src=".github/readme/banner.png" alt="FaceSafety" width="100%">
+</p>
 
-# 🚀Contact:
- - Email: [davicjc@gmail.com]() "Most used"
- - Telegram: [@Davicjc](https://t.me/Davicjc)
+<p align="center">
+  <img alt="👤 Personal Project" src="https://img.shields.io/badge/%F0%9F%91%A4_Personal_Project-6E40C9?style=for-the-badge">
+  <img alt="Python" src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white">
+  <img alt="OpenCV" src="https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white">
+</p>
 
-# 🪄 One-Click Execution:
+<p align="center">
+  <b>Face Safety</b>: real-time facial recognition and access control system in Python (Windows, Linux, macOS, and Raspberry Pi).
+</p>
 
-- 📢 "Just for Windows because it's an '.exe'"
-- Click here: ["DOWNLOAD"](https://1drv.ms/u/s!AnmOlIL4SXyggoBBImepRALWGBEUfA?e=P84JPt)
-- This version does not require any steps to run, just download and open it!
-- "Remember that this version does not allow the editable 'KEY' function because it is not possible to edit the code, but everything works.
-- If any error occurs, which is very rare, execute this code in the cmd: ```pip install dlib && pip install face_recognition && pip install numpy && pip install opencv-python``` and try again!
-- "Camera required! Please note that depending on your PC, it may take a while to run 100% when opening".
+<p align="center">
+  <a href="README.md">🇧🇷 Versão em Português</a> ·
+  <a href="#-one-click-execution-windows-exe">🪄 Download .EXE (1-Click)</a> ·
+  <a href="#-running-from-source-v30">⚡ Run with Python</a> ·
+  <a href="#️-the-key-function-access-control">🗝️ KEY Function</a>
+</p>
 
-# ⬇️How to Download:
+---
 
-### For this code, you need to download some mandatory things that the libraries require:
+# 🏛️ Project History: The Legacy vs. Next Generation
 
-- 📢 "For Linux, you should download all the dependencies that will be shown below, except for the "Visual Studio" instruction. And remember that the installation method on Linux for each step may be different from the way it's done on Windows. If you have any questions, consult ChatGPT, and if you still can't figure it out, get in touch."
+**Face Safety** started during my college days as my **first serious Python project**, written **100% by hand before the AI era** through extensive research, documentation study, and experimentation.
 
-- Go to the Microsoft Store and download the latest available version of Python. If you want to use the same version used in this code, just access this link: ["Py-3.11"](https://apps.microsoft.com/store/detail/python-311/9NRWMJP3717K).
+Over the years, the original dependencies (`dlib` and `face_recognition`) became cumbersome to install on modern systems because they require heavy C++ compilers (Visual Studio Build Tools and CMake).
 
-- As a second step, download this program: ["Visual Studio"](https://visualstudio.microsoft.com/pt-br/visual-cpp-build-tools/). When you run it, it will open a download page. On that page, select the option "Desktop development with C++," which is usually the first option, and click install.
+To **keep the legacy alive** while preserving its history, the repository is now organized into two folders:
 
-- As a third step, you need to download this program: ["CMake"](https://cmake.org/download/). During the installation, make sure to check the option "Add CMake to the system PATH for all users" to avoid problems. After that, you can continue with the program download. Note: Once the program is downloaded, it is important to open it at least once, and then you can close it. Download the file corresponding to your operating system and make sure to install the "Installer" version of the program. For example, if you are using Windows, download the installer for Windows x64.
+| Folder | Description |
+| :--- | :--- |
+| 🚀 **[`v3.0/`](v3.0/)** *(Recommended)* | **Modern Version (3.0):** Rebuilt using modern methods with OpenCV's built-in Deep Learning engine (**YuNet + SFace ONNX**). Requires zero C++ compilers (`dlib`, `CMake`, or `Visual Studio`). Features a modern all-in-one Dark UI and a standalone **`.exe`**! |
+| 🏛️ **[`v2.5-legado/`](v2.5-legado/)** | **Classic College Version (2.5):** The original handmade code (`FaceSafety-2.5-Win.py` and `FaceSafety-2.5-Linx.py`), preserved as a historical record. |
 
-- After completing the previous steps, it is recommended to restart your PC. To do this, open your CMD and execute the following command: ```pip install dlib && pip install face_recognition && pip install numpy && pip install opencv-python```
+---
 
-- After following all these steps, you can open the program file ["Face Safety.py"](https://github.com/Davicjc/Face-Safety/releases).
+# 🪄 Running on Windows (3 Optional Ways!)
 
-- "If an error occurs, it may be an isolated problem related to your current system. If you have any questions, contact me via 'ctt no perfil'."
+### Option A: Automated Launcher (`.bat`) — *Easiest!*
+Double-click **[`Iniciar-FaceSafety.bat`](Iniciar-FaceSafety.bat)** in the project root. An interactive menu lets you choose:
+- **`[1]`** Launch the pre-built **`.EXE`** directly (no Python needed).
+- **`[2]`** Automatically check/install `opencv-python` and run the **`.py`** source code (ideal if you customized the `key()` function).
+- **`[3]`** Automatically create a clean virtual environment (`venv`) with `--no-cache-dir`, install dependencies, and launch the app.
+- **`[4]`** Open `v3.0/facesafety.py` in Notepad to edit the `key()` function.
 
-# 🔬How to Use:
+### Option B: Direct One-Click Executable (`.exe`)
+1. Open the [`v3.0/`](v3.0/) folder and run **[`FaceSafety-v3.0.exe`](v3.0/FaceSafety-v3.0.exe)**.
+2. On the first run, it automatically creates a `dados/` folder next to the executable and downloads the lightweight OpenCV face recognition models.
 
-### Don't forget to follow the instructions in the "How to Download" section.
+> ⚠️ **Note:** The pre-compiled `.exe` does not allow editing the `key()` function directly. If you want to customize `key()` for hardware/automation, use Option A (`[2]`/`[3]`) or Option C below!
 
-- This is the home page where you can access the program options.
-<img src="https://github.com/Davicjc/Face-Safety/blob/main/Fotos/1-Lobby.jpg?raw=true" width="300">
+---
 
-- This is the screen that appears when you click the 'Add Person' button. In this blank field, you will enter the name of the person you want to register. After that, the camera will open and wait for you to press any key to take the photo. If the face is not found in the image, the scanner will not work, and you should delete the registration in the 'Remove Person' option. Then, you can re-register the person in 'Add Person'. Reminder: it is important not to use duplicate names.
-<img src="https://github.com/Davicjc/Face-Safety/blob/main/Fotos/2-Add.jpg?raw=true" width="500">
+# ⚡ Option C: Running from Source in Terminal (Windows, Linux, macOS, Raspberry Pi)
 
-- In this part, you can choose which person to remove, which are the "photos" saved on your desktop. To delete a person through the program, it will present a list of registrations. When you find the person you want to delete, simply write the name exactly as it was registered and then click the "delete" button. The person's name will be removed at this point in the process. When you exit the "Remove Person" tab and enter it again, the person will no longer appear in the list if you have completed this step correctly.
-<img src="https://github.com/Davicjc/Face-Safety/blob/main/Fotos/3-Rmv.jpg?raw=true" width="500">
+With **Python 3.9+** installed, run:
 
-- Finally, this is the scanner. When you press it, it will automatically load the registered people and start checking faces with their respective names. If there is any error, it may be due to a registration where the person's face is difficult to access, such as wearing hats or lack of lighting, for example.
- <img src="https://github.com/Davicjc/Face-Safety/blob/main/Fotos/4-Scanner.jpg?raw=true" width="400">
+```bash
+cd v3.0
+pip install -r requirements.txt
+python facesafety.py
+```
 
-# 🗝️KEY Function:
-### Can be customized...
+---
 
-- This part is only for those who will use the code to manage something like electronic doors, monitoring systems, among others. There will also be support for the [Raspberry Pi](https://www.raspberrypi.org/). In these two tabs, you can add a person as an administrator. Thus, at the end of the code, there will be a "Def Key". When a person stands in front of the camera, and their name is on the list of administrators, it will call this function and execute what is inside it "in a loop". Otherwise, if a person without administrative privileges or someone who is not registered stands in front of the camera, it will not be called. In this way, whoever uses this code can perform an action, such as unlocking or locking a door, for example, through this variable. Remember that within this function, it can be fully customized if you have knowledge of what you are doing.
- <img src="https://github.com/Davicjc/Face-Safety/blob/main/Fotos/4.5-ADMs.jpg?raw=true" width="450">
+# 🔬 How to Use Face Safety 3.0
 
-- [Image of the relevant part of the code that can be modified](https://raw.githubusercontent.com/Davicjc/Face-Safety/main/Fotos/Key%20Img.jpg)
+1. **➕ Register a Person:**
+   - Enter the person's name on the right panel.
+   - *(Optional)* Check **"Cadastrar como Administrador"** if they should trigger the `key()` function.
+   - Click **📸 Capturar da Câmera** to take a live photo, or **📁 Foto...** to import an image from disk.
+2. **👥 Manage People & Admins (`ADM`):**
+   - Select any person in the list and click **⭐ + / - ADM** to toggle Administrator privileges, or **🗑️ Remover** to delete their registration.
+3. **▶ Start Scanner:**
+   - Click **▶ Ligar Câmera / Scanner** to monitor faces in real time:
+     - 🟨 **Gold Box `[ADM]`**: Recognized Administrator (triggers `key()`).
+     - 🟩 **Green Box**: Recognized registered person.
+     - 🟥 **Red Box**: Unregistered face (`Nao Cadastrado`).
+
+---
+
+# 🗝️ The `key()` Function (Access Control)
+
+At the bottom of [`v3.0/facesafety.py`](v3.0/facesafety.py), you can customize `def key(nome: str = ""):` to unlock electronic doors, trigger relays on a Raspberry Pi, send Serial commands to an Arduino, or call a Webhook whenever an Administrator stands in front of the camera.
+
+---
+
+# 📸 Classic Version Screenshots (v2.5 Legacy)
+
+<p align="center">
+  <img src=".github/readme/telas.png" alt="Original FaceSafety v2.5 screenshots" width="100%">
+</p>
+
+---
+
+# 📬 Contact & Support
+
+- 🐛 **GitHub Issues:** [Open an Issue](https://github.com/Davicjc/Face-Safety/issues)
+- 📧 **Email:** `contato@davicjc.com` / `davicjc@gmail.com`
+- 💬 **Telegram:** [@Davicjc](https://t.me/Davicjc)
+
+---
+
+<p align="center">Made by <a href="https://github.com/Davicjc">Davi Castro</a> · <a href="https://davicjc.com">davicjc.com</a></p>

@@ -1,0 +1,19 @@
+# Dados locais gerados em execução (rostos cadastrados, ADMs e modelos ONNX baixados automaticamente)
+dados/
+v3.0/dados/
+models/
+
+# Ambientes virtuais e cache do Python
+venv/
+v3.0/venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Arquivos temporários de compilação
+build/
+build_tmp/
+*.spec
+*.tmp
+image.png

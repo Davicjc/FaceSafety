@@ -8,83 +8,133 @@
   <img alt="OpenCV" src="https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white">
 </p>
 
-<p align="center">Face Safety: cadastro de rostos e reconhecimento facial pela câmera, para segurança ou controle de acesso, em Python (Windows e Linux).</p>
-
-### 📸 Telas do sistema
+<p align="center">
+  <b>Face Safety</b>: sistema de cadastro de rostos, reconhecimento facial em tempo real e controle de acesso em Python (Windows, Linux, macOS e Raspberry Pi).
+</p>
 
 <p align="center">
-  <img src=".github/readme/telas.png" alt="Telas de FaceSafety" width="100%">
+  <a href="English%20version.md">🇺🇸 English Version</a> ·
+  <a href="#-executar-1-clique-windows-exe">🪄 Baixar .EXE (1 Clique)</a> ·
+  <a href="#-como-rodar-o-código-fonte-v30">⚡ Rodar em Python</a> ·
+  <a href="#️-função-key-controle-de-acesso">🗝️ Função KEY</a> ·
+  <a href="#️-a-história-do-projeto-legado-vs-nova-geração">🏛️ O Legado</a>
 </p>
 
 ---
 
-[[English version]](https://github.com/Davicjc/Face-Safety/blob/main/English%20version.md)
+# 🏛️ A História do Projeto: Legado vs. Nova Geração
 
-# 📷Face-Safety
-### Windows & Linux 'beta': 
-- Este é um programa em Python que utiliza a biblioteca de reconhecimento facial "face recognition". Ele permite adicionar fotos para que sejam detectadas pela câmera, excluir registros de pessoas e ativar o modo scanner, que apresenta o nome da pessoa ao entrar em frente à câmera. O programa pode ser utilizado para fins de segurança ou controle de acesso, caso seja adaptado corretamente.
+O **Face Safety** nasceu na época da faculdade como o meu **primeiro código sério em Python**, feito **100% à mão, antes da era das IAs**, na base de muita pesquisa, leitura de documentações e testes práticos.
 
-# 🚀Atalhos:
-- ["🪄 Executar 1 Clique"](https://github.com/Davicjc/Face-Safety#-executar-1-clique) (Essa versão não precisa de nenhum passo para executar, é só baixar e abrir!)
-- ["📷Face-Safety"](https://github.com/Davicjc/Face-Safety#face-safety) (Sobre o programa/app)
-- ["⬇️Como Baixar"](https://github.com/Davicjc/Face-Safety#%EF%B8%8Fcomo-baixar) (Para esse código, você precisa baixar algumas coisas obrigatórias que as bibliotecas pedem)
-- ["🔬Como usar"](https://github.com/Davicjc/Face-Safety#como-usar) (Aprenda a usar o programa com todos os detalhes)
-- ["🗝️Função KEY"](https://github.com/Davicjc/Face-Safety#%EF%B8%8Ffun%C3%A7%C3%A3o-key) (Essa parte permite gerenciar sistemas como portas eletrônicas e sistemas de monitoramento, podendo ser utilizado em um Raspberry Pi ou qualquer outro lugar onde o código seja compatível. Você pode adicionar administradores e executar ações personalizadas quando um administrador é reconhecido pela câmera)
+Com o passar dos anos, as bibliotecas originais (`dlib` e `face_recognition`) passaram a exigir compiladores C++ pesados (Visual Studio Build Tools e CMake), dificultando a instalação para quem queria testar ou estudar o projeto hoje.
 
-### Contato:
- - E-mail: [davicjc@gmail.com]() "Mais utilizado"
- - Telegram: [@Davicjc](https://t.me/Davicjc)
+Para **manter o legado vivo** sem apagar a história original, o repositório agora está organizado em duas pastas:
 
-# 🪄 Executar 1 Clique:
+| Pasta | Descrição |
+| :--- | :--- |
+| 🚀 **[`v3.0/`](v3.0/)** *(Recomendada)* | **Versão Moderna (3.0):** Recriada com métodos recentes usando o motor neural nativo do OpenCV (**YuNet + SFace ONNX**). Não precisa de `dlib`, `CMake` nem `Visual Studio`. Inclui interface moderna Dark UI com câmera integrada e versão **`.exe` pronta para abrir**! |
+| 🏛️ **[`v2.5-legado/`](v2.5-legado/)** | **Versão Clássica da Faculdade (2.5):** O código original histórico (`FaceSafety-2.5-Win.py` e `FaceSafety-2.5-Linx.py`), preservado exatamente como foi escrito à mão na época. |
 
-- 📢 "Apenas para Windows por ser um '.exe'"
-- Clique aqui: ["BAIXAR"](https://1drv.ms/u/s!AnmOlIL4SXyggoBBImepRALWGBEUfA?e=P84JPt)
-- Essa versão não precisa de nenhum passo para executar, é só baixar e abrir!
-- "Lembrando que essa versão não é possível usar a função "KEY" editável, pois não é possível editar o código, porém tudo funciona.
-- Caso aconteça algum erro, o que é bem raro, execute esse codigo no cmd: ```pip install dlib && pip install face_recognition && pip install numpy && pip install opencv-python``` e tente novamente!
-- "Obrigatório câmera! Lembrando que, dependendo do PC, ao abrir, pode demorar um pouco para ser executado 100%".
+---
 
-# ⬇️Como Baixar:
+# 🪄 Executar no Windows (3 Formas Opcionais!)
 
-### Para esse código, você precisa baixar algumas coisas obrigatórias que as bibliotecas pedem:
+Você pode escolher a forma que achar mais prática:
 
-- 📢 "Para o Linux, você deve baixar todas as dependências que serão mostradas abaixo, exceto a instrução do "Visual Studio". E lembre-se de que o método de instalação no Linux de cada etapa pode ser diferente da maneira feita no Windows. Qualquer dúvida, consulte o ChatGPT, e se não conseguir, entre em contato."
+### Opção A: Inicializador Automático (`.bat`) — *Mais prático!*
+Basta dar dois cliques no arquivo **[`Iniciar-FaceSafety.bat`](Iniciar-FaceSafety.bat)** na raiz do projeto. Ele abre um menu interativo em que você escolhe:
+- **`[1]`** Abrir direto a versão pronta **`.EXE`** (sem precisar de Python).
+- **`[2]`** Verificar/instalar o `opencv-python` automaticamente e rodar o código-fonte **`.py`** (ideal se você editou a função `key()`).
+- **`[3]`** Criar um ambiente virtual (`venv`) limpo com `--no-cache-dir`, instalar tudo sozinho e abrir o programa (evita qualquer erro de permissão no Windows).
+- **`[4]`** Abrir o `facesafety.py` direto no Bloco de Notas para editar a função `key()`.
 
-- Vá à loja da Microsoft e baixe a versão mais recente do Python disponível. Caso queira usar a mesma versão utilizada neste código, basta acessar este link: ["Py-3.11"](https://apps.microsoft.com/store/detail/python-311/9NRWMJP3717K).
+### Opção B: Executável Direto 1-Clique (`.exe`)
+Quer apenas abrir o programa direto **sem instalar Python e sem digitar nada no terminal**?
+1. Acesse a pasta [`v3.0/`](v3.0/) e execute o arquivo **[`FaceSafety-v3.0.exe`](v3.0/FaceSafety-v3.0.exe)**.
+2. Na primeira vez que abrir, ele criará automaticamente a pasta `dados/` ao lado do programa e baixará os modelos leves de reconhecimento facial.
 
-- Segundo passo, baixe esse programa: ["Visual Studio"](https://visualstudio.microsoft.com/pt-br/visual-cpp-build-tools/). Ao executá-lo, ele abrirá uma página de download. Nessa página, selecione a opção "Desenvolvimento para desktop com C++", que geralmente é a primeira opção, e clique em instalar.
+> ⚠️ **Observação:** Na versão `.exe` o código já está compilado, então não é possível editar a função `key()` dentro dele. Se quiser personalizar a função `key()`, use a Opção A (`[2]`/`[3]`) ou a Opção C abaixo!
 
-- Terceiro passo, você precisa baixar este programa: ["CMake"](https://cmake.org/download/). Durante a instalação, é importante marcar a opção "Add CMake to the system PATH for all users" para evitar problemas. Após isso, você pode continuar o download do programa. Aviso: assim que o programa for baixado, é importante abri-lo pelo menos uma vez e, em seguida, você pode fechá-lo. Baixe o arquivo correspondente ao seu sistema operacional e certifique-se de instalar a versão do programa "Installer". Por exemplo, se você estiver usando o Windows, baixe o instalador para Windows x64.
+---
 
-- Após fazer os últimos passos, recomendo reiniciar o PC. Para fazer essa etapa, abra seu CMD e execute o seguinte comando: ```pip install dlib && pip install face_recognition && pip install numpy && pip install opencv-python```
+# ⚡ Opção C: Rodar pelo Código-Fonte no Terminal (Windows, Linux, macOS e Raspberry Pi)
 
-- Após seguir todas essas etapas, você pode abrir o arquivo do programa ["Face Safety.py"](https://github.com/Davicjc/Face-Safety/releases).
+Na versão **3.0**, você não precisa instalar nenhum compilador C++. Basta ter o **Python 3.9+** instalado e rodar no terminal:
 
-- "Caso ocorra algum erro, pode ser um problema isolado relacionado ao seu sistema atual. Em caso de dúvidas, entre em contato pelo 'ctt no perfil'."
+```bash
+cd v3.0
+pip install -r requirements.txt
+python facesafety.py
+```
 
-# 🔬Como usar:
+Pronto! Apenas o `opencv-python` e o `numpy` são instalados, e os modelos neurais ONNX são baixados automaticamente na primeira execução.
 
-### Não esqueça de seguir as instruções da seção "[Como Baixar](https://github.com/Davicjc/Face-Safety/blob/main/README.md#como-baixar)".
+---
 
-- Esta parte é a página inicial, onde você pode acessar as opções do programa.
-<img src="https://github.com/Davicjc/Face-Safety/blob/main/Fotos/1-Lobby.jpg?raw=true" width="300">
+# 🔬 Como Usar o Face Safety 3.0
 
-- Esta é a tela que aparece ao clicar no botão 'Adicionar Pessoa'. Nesse campo em branco, você irá colocar o nome da pessoa que deseja cadastrar. Após isso, a câmera será aberta e irá aguardar que você aperte qualquer tecla para tirar a foto. Caso o rosto não seja encontrado na imagem, o scanner não funcionará e você deverá apagar o cadastro na opção 'Remover Pessoa'. Depois, você pode refazer o cadastro da pessoa novamente em 'Adicionar Pessoa'. Lembrete: é importante não colocar nomes repetidos.
-<img src="https://github.com/Davicjc/Face-Safety/blob/main/Fotos/2-Add.jpg?raw=true" width="500">
+Tudo funciona em uma **única janela moderna** com a câmera embutida:
 
-- Nessa parte, você pode escolher quem você irá remover, que são as "fotos" que ficam salvas em sua área de trabalho. Para apagar uma pessoa pelo programa, ele apresentará uma lista de cadastros. Ao encontrar a pessoa que deseja apagar, basta escrever o nome exatamente como foi cadastrado e depois apertar o botão "apagar". O nome da pessoa será excluído nesse ponto do processo. Ao sair da aba "Remover Pessoa" e entrar novamente, a pessoa não constará mais na lista, caso tenha realizado essa etapa corretamente.
-<img src="https://github.com/Davicjc/Face-Safety/blob/main/Fotos/3-Rmv.jpg?raw=true" width="500">
+1. **➕ Cadastrar Pessoa:**
+   - Digite o nome da pessoa no painel lateral direito.
+   - *(Opcional)* Marque **"Cadastrar como Administrador"** caso ela deva acionar a função `key()`.
+   - Clique em **📸 Capturar da Câmera** para tirar a foto na hora, ou em **📁 Foto...** para escolher uma imagem já salva no computador.
+   - O sistema valida automaticamente se há um rosto nítido antes de salvar, evitando cadastros corrompidos!
+2. **👥 Gerenciar Pessoas e Administradores (`ADM`):**
+   - Todos os rostos cadastrados aparecem na lista lateral indicando se são `⭐ [ADM]` ou `👤` comuns.
+   - Selecione qualquer pessoa na lista e clique em **⭐ + / - ADM** para promover ou remover permissão de Administrador instantaneamente.
+   - Clique em **🗑️ Remover** para apagar o cadastro selecionado.
+3. **▶ Ligar Câmera / Scanner:**
+   - Clique em **▶ Ligar Câmera / Scanner** para iniciar o reconhecimento em tempo real:
+     - 🟨 **Quadro Dourado `[ADM]`**: Administrador reconhecido (aciona a função `key()` automaticamente).
+     - 🟩 **Quadro Verde**: Pessoa cadastrada reconhecida (exibe nome e porcentagem de confiança).
+     - 🟥 **Quadro Vermelho**: Rosto não cadastrado (`Nao Cadastrado`).
 
-- Por fim, este é o scanner. Ao apertá-lo, automaticamente carregará as pessoas cadastradas e começará a verificar os rostos com seus respectivos nomes. Se houver algum erro, pode ser devido a um cadastro em que a face da pessoa está com difícil acesso, como o uso de bonés ou falta de iluminação, por exemplo.
- <img src="https://github.com/Davicjc/Face-Safety/blob/main/Fotos/4-Scanner.jpg?raw=true" width="400">
+---
 
-# 🗝️Função KEY:
-### Pode ser personalizado...
+# 🗝️ Função `key()` (Controle de Acesso)
 
-- Essa parte é apenas para aqueles que irão usar o código para gerenciar algo, como portas eletrônicas, sistemas de monitoramento, entre outros. Também haverá suporte para o [Raspberry Pi](https://www.raspberrypi.org/). Nestas duas abas, você pode adicionar uma pessoa como administradora. Sendo assim, no final do código haverá um "Def Key". Quando uma pessoa entrar na frente da câmera e o nome dela estiver na lista de administradores, ela irá chamar essa função e executará o que estiver dentro dela "em loop". Caso contrário, se uma pessoa sem poderes administrativos ou alguém que não esteja cadastrado ficar na frente da câmera, ela não será chamada. Dessa forma, quem for utilizar este código pode realizar uma ação, como destrancar ou trancar uma porta, por exemplo, por meio desta variável. Lembrando que dentro dessa função ela pode ser totalmente personalizada caso você tenha conhecimento do que esteja fazendo.
-<img src="https://github.com/Davicjc/Face-Safety/blob/main/Fotos/4.5-ADMs.jpg?raw=true" width="450">
+Pensada para quem deseja integrar o reconhecimento facial com **fechaduras eletrônicas, relés, Raspberry Pi (GPIO), Arduino (Serial) ou sistemas de monitoramento**.
 
-- [Imagem da parte referente do código que pode ser modificada](https://github.com/Davicjc/Face-Safety/blob/main/Fotos/Key%20Img.jpg?raw=true)
+No final do arquivo [`v3.0/facesafety.py`](v3.0/facesafety.py), você encontra a função `key(nome)`:
+
+```python
+def key(nome: str = ""):
+    print(f"[KEY] Acesso permitido para ADM '{nome}' por 5 segundos...")
+
+    # 1) Coloque abaixo seu código para liberar o acesso (ex: destrancar porta / ligar relé)
+    pass
+
+    # Tempo em que o acesso permanece liberado (em segundos)
+    time.sleep(5)
+
+    print(f"[KEY] Acesso expirado após 5 segundos para '{nome}'.")
+
+    # 2) Coloque abaixo seu código para encerrar o acesso (ex: trancar porta / desligar relé)
+    pass
+```
+
+- Sempre que um **Administrador (`ADM`)** entra na frente da câmera, o programa executa a função `key(nome)` automaticamente.
+- Na versão 3.0, ela roda em **segundo plano (thread separada)** com trava contra repetições simultâneas — assim o `time.sleep(5)` **não congela o vídeo da câmera**!
+
+---
+
+# 📸 Telas da Versão Clássica (v2.5 Legado)
+
+Registros da interface original criada na época da faculdade (código disponível em [`v2.5-legado/`](v2.5-legado/)):
+
+<p align="center">
+  <img src=".github/readme/telas.png" alt="Telas originais do FaceSafety v2.5" width="100%">
+</p>
+
+---
+
+# 📬 Contato e Suporte
+
+Encontrou algum problema ou quer trocar uma ideia sobre o projeto?
+- 🐛 **GitHub Issues:** [Abrir uma Issue no repositório](https://github.com/Davicjc/Face-Safety/issues) *(recomendado para dúvidas técnicas)*
+- 📧 **E-mail:** `contato@davicjc.com` / `davicjc@gmail.com`
+- 💬 **Telegram:** [@Davicjc](https://t.me/Davicjc)
 
 ---
 
