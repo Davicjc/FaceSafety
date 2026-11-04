@@ -19,3 +19,39 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+-------------------------------------------------------------------------------
+
+TERMO ADICIONAL — CRÉDITO DE AUTORIA (obrigatório)
+
+Todo uso, cópia, modificação ou distribuição deste software, ou de partes dele,
+deve manter visível o crédito de autoria de Davi Castro:
+
+1. Em interfaces web (sites, painéis, sistemas): incluir o selo
+   <script src="https://recursos.cjc.pics/projetos/footer-davi/footer_davicjc.js" defer></script>
+   numa página ou aba que o usuário acesse normalmente (a página principal, um
+   rodapé, ou uma aba "Sobre" ou "Créditos").
+2. Em programas sem interface web (desktop, linha de comando, bibliotecas):
+   mostrar "Feito por Davi Castro — https://davicjc.com" numa tela, menu
+   "Sobre", texto de ajuda ou na documentação que acompanha o programa.
+
+O crédito tem que ficar legível e acessível. Não pode ser escondido, removido,
+encoberto, reduzido a tamanho ilegível, deixado transparente, posto fora da tela
+nem disfarçado de nenhuma outra forma.
+
+ADDITIONAL TERM — AUTHOR ATTRIBUTION (required)
+
+Any use, copy, modification or distribution of this software, or of parts of it,
+must keep Davi Castro's author attribution visible:
+
+1. In web interfaces (sites, dashboards, systems): include the badge
+   <script src="https://recursos.cjc.pics/projetos/footer-davi/footer_davicjc.js" defer></script>
+   on a page or tab users normally reach (the main page, a footer, or an
+   "About" or "Credits" tab).
+2. In software without a web interface (desktop, command line, libraries):
+   show "Made by Davi Castro — https://davicjc.com" on a screen, an "About"
+   menu, help text or the documentation shipped with it.
+
+The attribution must stay legible and reachable. It must not be hidden, removed,
+covered, shrunk to an unreadable size, made transparent, moved off-screen or
+disguised in any other way.
