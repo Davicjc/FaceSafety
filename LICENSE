@@ -28,7 +28,7 @@ Todo uso, cópia, modificação ou distribuição deste software, ou de partes d
 deve manter visível o crédito de autoria de Davi Castro:
 
 1. Em interfaces web (sites, painéis, sistemas): incluir o selo
-   <script src="https://recursos.cjc.pics/projetos/footer-davi/footer_davicjc.js" defer></script>
+   <script src="https://footer.davicjc.com/projetos/footer-davi/footer_davicjc.js" defer></script>
    numa página ou aba que o usuário acesse normalmente (a página principal, um
    rodapé, ou uma aba "Sobre" ou "Créditos").
 2. Em programas sem interface web (desktop, linha de comando, bibliotecas):
@@ -45,7 +45,7 @@ Any use, copy, modification or distribution of this software, or of parts of it,
 must keep Davi Castro's author attribution visible:
 
 1. In web interfaces (sites, dashboards, systems): include the badge
-   <script src="https://recursos.cjc.pics/projetos/footer-davi/footer_davicjc.js" defer></script>
+   <script src="https://footer.davicjc.com/projetos/footer-davi/footer_davicjc.js" defer></script>
    on a page or tab users normally reach (the main page, a footer, or an
    "About" or "Credits" tab).
 2. In software without a web interface (desktop, command line, libraries):
